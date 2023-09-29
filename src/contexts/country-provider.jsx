@@ -17,7 +17,7 @@ export function CountryProvider({ children }) {
         const data = await response.json();
         setCountriesData(data);
       } catch (error) {
-        console.error("Erro ao buscar países:", error);
+        console.error(error);
       }
     }
 
