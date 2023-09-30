@@ -1,23 +1,41 @@
-import { Link } from "react-router-dom/dist";
+import {
+  BoldText,
+  CardContainer,
+  CardImage,
+  CardInfo,
+  CardTitle,
+  RegularText,
+  StyledLink,
+} from "../style/country-card";
+
+import { GetTheme } from "../utils/get-theme";
 
 const CountryCard = ({ country }) => {
   const { name, population, region, capital } = country;
-  const CountryCardInfo = () => {
-    return (
-      <>
-        <p>{name?.common}</p>
-        <p>{`População: ${population}`}</p>
-        <p>{`Região: ${region}`}</p>
-        <p>{`Capital: ${capital}`}</p>
-      </>
-    );
-  };
+
+  const theme = GetTheme();
 
   return (
-    <Link to={`${name?.common}`}>
-      <img alt={"sadasda"} src={country?.flags?.png}></img>
-      <CountryCardInfo />
-    </Link>
+    <StyledLink to={`${name?.common}`}>
+      <CardContainer theme={theme}>
+        <CardImage alt={`${name?.common} flag`} src={country?.flags?.png} />
+        <CardInfo>
+          <CardTitle theme={theme}>{name?.common}</CardTitle>
+          <RegularText theme={theme}>
+            <BoldText theme={theme}>Population: </BoldText>
+            {population.toLocaleString("pt-BR")}
+          </RegularText>
+          <RegularText theme={theme}>
+            <BoldText theme={theme}>Region: </BoldText>
+            {region}
+          </RegularText>
+          <RegularText theme={theme}>
+            <BoldText theme={theme}>Capital: </BoldText>
+            {capital}
+          </RegularText>
+        </CardInfo>
+      </CardContainer>
+    </StyledLink>
   );
 };
 

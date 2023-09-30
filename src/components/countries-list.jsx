@@ -1,13 +1,23 @@
 import React, { useMemo } from "react";
+
 import { useCountries } from "../contexts/countries-provider";
+
 import useRegionStore from "../store/region-store";
 import useCountryStore from "../store/country-store";
+
+import { ListContainer } from "../style/country-list";
+
+import { GetTheme } from "../utils/get-theme";
+
 import CountryCard from "./country-card";
 
 const CountriesList = () => {
-  const countriesData = useCountries();
   const { region } = useRegionStore();
   const { country } = useCountryStore();
+
+  const countriesData = useCountries();
+
+  const theme = GetTheme();
 
   const filteredByCountry = useMemo(() => {
     if (!country) {
@@ -29,11 +39,11 @@ const CountriesList = () => {
   }, [filteredByCountry, region]);
 
   return (
-    <>
+    <ListContainer theme={theme}>
       {filteredByRegion?.map((country) => (
         <CountryCard key={country?.name?.common} country={country} />
       ))}
-    </>
+    </ListContainer>
   );
 };
 

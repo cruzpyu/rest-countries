@@ -3,7 +3,7 @@ const CountryInfo = ({ item, languages, currencies }) => {
     <>
       <img alt={`${item.name.common} flag`} src={item.flags.svg} />
       <p>{item.name.official}</p>
-      <p>Population: {item.population}</p>
+      <p>Population: {item.population.toLocaleString("pt-BR")}</p>
       <p>Region: {item.region}</p>
       <p>Capital: {item.capital}</p>
       <p>Subregion: {item.subregion}</p>
