@@ -4,8 +4,7 @@ import useRegionStore from "../store/region-store";
 import useCountryStore from "../store/country-store";
 import CountryCard from "./country-card";
 
-
-const CountryList = () => {
+const CountriesList = () => {
   const countriesData = useCountries();
   const { region } = useRegionStore();
   const { country } = useCountryStore();
@@ -38,4 +37,4 @@ const CountryList = () => {
   );
 };
 
-export default CountryList;
+export default CountriesList;

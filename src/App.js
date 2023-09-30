@@ -4,7 +4,6 @@ import { CountriesProvider } from "./contexts/countries-provider";
 
 import Home from "./screens/home-screen";
 import CountryPage from "./screens/country-page";
-
 function App() {
   return (
     <>
