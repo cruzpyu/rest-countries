@@ -1,12 +1,12 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 
-const CountryContext = createContext();
+const CountriesContext = createContext();
 
-export function useCountry() {
-  return useContext(CountryContext);
+export function useCountries() {
+  return useContext(CountriesContext);
 }
 
-export function CountryProvider({ children }) {
+export function CountriesProvider({ children }) {
   const [countriesData, setCountriesData] = useState([]);
   const apiUrl = "https://restcountries.com/v3.1/all";
 
@@ -25,8 +25,8 @@ export function CountryProvider({ children }) {
   }, []);
 
   return (
-    <CountryContext.Provider value={countriesData}>
+    <CountriesContext.Provider value={countriesData}>
       {children}
-    </CountryContext.Provider>
+    </CountriesContext.Provider>
   );
 }

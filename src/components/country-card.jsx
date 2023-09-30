@@ -1,20 +1,23 @@
+import { Link } from "react-router-dom/dist";
+
 const CountryCard = ({ country }) => {
+  const { name, population, region, capital } = country;
   const CountryCardInfo = () => {
     return (
       <>
-        <p>{country?.name?.common}</p>
-        <p>{`População: ${country?.population}`}</p>
-        <p>{`Região: ${country?.region}`}</p>
-        <p>{`Capital: ${country?.capital}`}</p>
+        <p>{name?.common}</p>
+        <p>{`População: ${population}`}</p>
+        <p>{`Região: ${region}`}</p>
+        <p>{`Capital: ${capital}`}</p>
       </>
     );
   };
 
   return (
-    <div>
+    <Link to={`${name?.common}`}>
       <img alt={"sadasda"} src={country?.flags?.png}></img>
       <CountryCardInfo />
-    </div>
+    </Link>
   );
 };
 

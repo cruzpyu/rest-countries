@@ -1,17 +1,12 @@
 import React, { useMemo } from "react";
-
-import { useCountry } from "../contexts/country-provider";
-
+import { useCountries } from "../contexts/countries-provider";
 import useRegionStore from "../store/region-store";
 import useCountryStore from "../store/country-store";
-
-import RegionFilter from "./filters/region-filter";
-import CountryFilter from "./filters/country-filter";
-
 import CountryCard from "./country-card";
 
+
 const CountryList = () => {
-  const countriesData = useCountry();
+  const countriesData = useCountries();
   const { region } = useRegionStore();
   const { country } = useCountryStore();
 
@@ -36,9 +31,7 @@ const CountryList = () => {
 
   return (
     <>
-      <CountryFilter />
-      <RegionFilter />
-      {filteredByRegion.map((country) => (
+      {filteredByRegion?.map((country) => (
         <CountryCard key={country?.name?.common} country={country} />
       ))}
     </>

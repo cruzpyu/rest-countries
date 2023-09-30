@@ -1,13 +1,22 @@
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { CountriesProvider } from "./contexts/countries-provider";
 
-import { CountryProvider } from "./contexts/country-provider";
-import CountryList from "./components/country-list";
+import Home from "./screens/home-screen";
+import CountryPage from "./screens/country-page";
 
 function App() {
   return (
-    <CountryProvider>
-      <CountryList />
-    </CountryProvider>
+    <>
+      <BrowserRouter>
+        <CountriesProvider>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/:countryName" element={<CountryPage />} />
+          </Routes>
+        </CountriesProvider>
+      </BrowserRouter>
+    </>
   );
 }
 
