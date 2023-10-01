@@ -1,11 +1,16 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-import useCountryStore from "../store/country-store";
+import useCountryStore from "../../../store/country-filter-store";
 
-import SearchIcon from "../icons/search-icon";
-import { useTheme } from "../hooks/use-theme";
-import { SearchContainer, TextInput } from "../style/filters";
+import SearchIcon from "../../../icons/search-icon";
+
+import { useTheme } from "../../../hooks/use-theme";
+
+import {
+  SearchContainer,
+  TextInput,
+} from "../filters-container/filters-container-style";
 
 const FilterCountry = () => {
   const { register, watch } = useForm();

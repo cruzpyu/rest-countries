@@ -1,7 +1,7 @@
-import { BorderBox, BorderItem } from "../style/country-page";
-import { BoldText } from "../style/text";
+import { BoldText } from "../../style/text";
+import { BorderBox, BorderItem } from "./borders-style";
 
-const CountryBorders = ({ theme, item }) => {
+const Borders = ({ theme, item }) => {
   return (
     <>
       <BoldText theme={theme}>Border countries: </BoldText>
@@ -14,4 +14,4 @@ const CountryBorders = ({ theme, item }) => {
   );
 };
 
-export default CountryBorders;
+export default Borders;

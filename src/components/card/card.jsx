@@ -1,4 +1,8 @@
-import { useTheme } from "../hooks/use-theme";
+import { useTheme } from "../../hooks/use-theme";
+
+import { getCountryCardData } from "../../utils/get-country-card-data";
+
+import { BoldText, RegularText } from "../../style/text";
 
 import {
   CardContainer,
@@ -6,18 +10,14 @@ import {
   CardInfo,
   CardTitle,
   StyledLink,
-} from "../style/country-card";
-
-import { BoldText, RegularText } from "../style/text";
-
-import { countryCardData } from "../utils/country-card-data";
+} from "./card-style";
 
 const CountryCard = ({ country }) => {
   const theme = useTheme();
 
   const { name, population, region, capital } = country;
 
-  const data = countryCardData(population, region, capital);
+  const data = getCountryCardData(population, region, capital);
 
   return (
     <StyledLink to={`${name?.common}`}>

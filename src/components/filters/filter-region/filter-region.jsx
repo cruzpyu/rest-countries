@@ -1,15 +1,22 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-import useRegionStore from "../store/region-store";
-import { useTheme } from "../hooks/use-theme";
-import { SelectContainer, StyledOption, StyledSelect } from "../style/filters";
-import { FilterOptions } from "../utils/filter-options";
+import { useTheme } from "../../../hooks/use-theme";
+
+import { FilterOptions } from "../../../utils/filter-options";
+
+import useRegionStore from "../../../store/region-filter-store";
+
+import {
+  SelectContainer,
+  StyledOption,
+  StyledSelect,
+} from "../filters-container/filters-container-style";
 
 const FilterRegion = () => {
   const { register, watch } = useForm();
-  const theme = useTheme();
   const { setRegion } = useRegionStore();
+  const theme = useTheme();
 
   return (
     <SelectContainer theme={theme} onChange={() => setRegion(watch("region"))}>

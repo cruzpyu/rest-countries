@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import { DEFAULT_RADIUS, DEFAULT_SPACING } from "./constants";
+import { DEFAULT_RADIUS, DEFAULT_SPACING } from "../../style/constants";
 
 export const CardInfo = styled.div`
   padding: calc(${DEFAULT_SPACING} * 2);

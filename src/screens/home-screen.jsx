@@ -1,14 +1,14 @@
-import CountryList from "../components/country-list";
-import FilterContainer from "../components/filter-container";
+import CountryList from "../components/country-list/country-list";
+import FiltersContainer from "../components/filters/filters-container/filters-container";
 
-import { AppContainer } from "../style/containers";
+import { HomeContainer } from "../style/containers";
 
 const Home = () => {
   return (
-    <AppContainer>
-      <FilterContainer />
+    <HomeContainer>
+      <FiltersContainer />
       <CountryList />
-    </AppContainer>
+    </HomeContainer>
   );
 };
 

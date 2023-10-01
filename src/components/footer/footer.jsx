@@ -1,7 +1,8 @@
-import { BoldText, RegularText } from "../style/text";
-import { SocialLink, StyledFooter } from "../style/footer";
+import { useTheme } from "../../hooks/use-theme";
 
-import { useTheme } from "../hooks/use-theme";
+import { BoldText, RegularText } from "../../style/text";
+
+import { SocialLink, StyledFooter } from "./footer-style";
 
 export const Footer = () => {
   const theme = useTheme();

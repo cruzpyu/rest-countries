@@ -1,7 +1,10 @@
-import ArrowIcon from "../icons/arrow-icon";
-import { useTheme } from "../hooks/use-theme";
-import { StyledBackBtn } from "../style/back-button";
-import { RegularText } from "../style/text";
+import { useTheme } from "../../hooks/use-theme";
+
+import ArrowIcon from "../../icons/arrow-icon";
+
+import { RegularText } from "../../style/text";
+
+import { StyledBackBtn } from "./back-button-style";
 
 const BackButton = () => {
   const theme = useTheme();

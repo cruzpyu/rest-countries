@@ -1,14 +1,15 @@
 import { useCallback } from "react";
 
-import { StyledButton } from "../style/toggle-theme";
-import { RegularText } from "../style/text";
+import useThemeStore from "../../store/theme-store";
 
-import MoonIcon from "../icons/moon-icon";
-import SunIcon from "../icons/sun-icon";
+import { useTheme } from "../../hooks/use-theme";
 
-import useThemeStore from "../store/theme-store";
+import { RegularText } from "../../style/text";
 
-import { useTheme } from "../hooks/use-theme";
+import MoonIcon from "../../icons/moon-icon";
+import SunIcon from "../../icons/sun-icon";
+
+import { StyledButton } from "./toggle-theme-style";
 
 const ToggleTheme = () => {
   const { theme, setTheme } = useThemeStore();

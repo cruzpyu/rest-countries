@@ -1,12 +1,12 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import { CountriesProvider } from "./contexts/countries-provider";
 
-import Home from "./screens/home-screen";
-import Header from "./components/header";
+import Header from "./components/header/header";
+import { Footer } from "./components/footer/footer";
 
-import { Footer } from "./components/footer";
-import CountryScreen from "./screens/country-screen";
+import Home from "./screens/home-screen";
+import SingleCountryScreen from "./screens/single-country-screen.jsx";
 
 function App() {
   return (
@@ -15,10 +15,10 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/:countryName" element={<CountryScreen />} />
+          <Route path="/:countryName" element={<SingleCountryScreen />} />
         </Routes>
         <Footer />
-      </CountriesProvider>{" "}
+      </CountriesProvider>
     </BrowserRouter>
   );
 }

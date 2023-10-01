@@ -1,20 +1,20 @@
-import { useTheme } from "../hooks/use-theme";
+import { useTheme } from "../../hooks/use-theme";
 import {
   CountryFlag,
   CountryName,
   InfoContainer,
   OneSide,
   TwoSides,
-} from "../style/country-page";
-import { BoldText, RegularText } from "../style/text";
+} from "./single-country-style";
+import { BoldText, RegularText } from "../../style/text";
 
-import { countryPageData } from "../utils/country-page-data";
+import { getCountryPageData } from "../../utils/get-country-page-data";
 
-import CountryBorders from "./country-borders";
+import Borders from "../borders/borders";
 
-const CountryInfo = ({ item, languages, currencies }) => {
+const SingleCountryInfo = ({ item, languages, currencies }) => {
   const theme = useTheme();
-  const data = countryPageData(item, languages, currencies);
+  const data = getCountryPageData(item, languages, currencies);
 
   return (
     <InfoContainer theme={theme}>
@@ -45,10 +45,10 @@ const CountryInfo = ({ item, languages, currencies }) => {
             })}
           </OneSide>
         </TwoSides>
-        {item.borders && <CountryBorders theme={theme} item={item} />}
+        {item.borders && <Borders theme={theme} item={item} />}
       </OneSide>
     </InfoContainer>
   );
 };
 
-export default CountryInfo;
+export default SingleCountryInfo;

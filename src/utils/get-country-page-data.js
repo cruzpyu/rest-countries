@@ -1,4 +1,4 @@
-export const countryPageData = (item, languages, currencies) => {
+export const getCountryPageData = (item, languages, currencies) => {
   return {
     RIGHT: [
       { key: "Population: ", value: item.population.toLocaleString("pt-BR") },
