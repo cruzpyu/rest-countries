@@ -5,7 +5,7 @@ export const ListContainer = styled.section`
   grid-template-columns: repeat(4, 1fr);
   background-color: ${(props) => props.theme.BACKGROUND_COLOR};
   padding: 80px 108px;
-  padding-bottom: 60vh;
+  padding-bottom: 61vh;
   gap: 64px;
 
   @media (max-width: 767px) {

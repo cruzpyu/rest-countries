@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-export const Container = styled.div `
+export const Container = styled.div`
   display: flex;
-  padding: 16px 96px 16px 96px;
-  background-color:${(props) => props.theme.BACKGROUND_COLOR};
+  padding: 48px 96px 16px 96px;
+  background-color: ${(props) => props.theme.BACKGROUND_COLOR};
   justify-content: space-between;
 
   @media (max-width: 767px) {
@@ -14,7 +14,7 @@ export const Container = styled.div `
   }
 `;
 
-export const SearchContainer = styled.form `
+export const SearchContainer = styled.form`
   background-color: ${(props) => props.theme.ELEMENTS_COLOR};
   width: 30%;
   border-radius: 4px;
@@ -30,7 +30,7 @@ export const SearchContainer = styled.form `
     width: 100%;
   }
 `;
-export const TextInput = styled.input `
+export const TextInput = styled.input`
   font-family: inherit;
   background-color: transparent;
   width: 100%;
@@ -41,7 +41,7 @@ export const TextInput = styled.input `
   }
 `;
 
-export const SelectContainer = styled.form `
+export const SelectContainer = styled.form`
   background-color: ${(props) => props.theme.ELEMENTS_COLOR};
   width: 15%;
   border-radius: 4px;
@@ -52,7 +52,7 @@ export const SelectContainer = styled.form `
   }
 `;
 
-export const StyledSelect = styled.select `
+export const StyledSelect = styled.select`
   padding: 16px 0 16px 16px;
   border-radius: 4px;
   font-family: inherit;
@@ -64,7 +64,7 @@ export const StyledSelect = styled.select `
   width: 96%;
 `;
 
-export const StyledOption = styled.option `
+export const StyledOption = styled.option`
   font-family: inherit;
   box-shadow: none;
 `;

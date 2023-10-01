@@ -1,16 +1,18 @@
 import styled from "styled-components";
 
-export const BorderBox = styled.ul`
+export const BorderContainer = styled.ul`
+  margin-top: 40px;
+`;
+export const BorderBox = styled.div`
   display: flex;
-  gap: 16px;
   flex-wrap: wrap;
-  margin-top: 32px;
-  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 16px;
 
   @media (max-width: 767px) {
+    margin-top: 24px;
   }
 `;
-
 export const BorderItem = styled.li`
   width: 100px;
   height: 30px;
@@ -21,10 +23,12 @@ export const BorderItem = styled.li`
   box-shadow: 0px 4px 6px ${(props) => props.theme.SHADOW_COLOR};
   color: ${(props) => props.theme.TEXT_COLOR};
   background-color: ${(props) => props.theme.ELEMENTS_COLOR};
+  margin-top: 16px;
 
   @media (max-width: 767px) {
-    width: 120px;
+    width: 100px;
     height: 30px;
     font-size: 16px;
+    margin-top: 0;
   }
 `;

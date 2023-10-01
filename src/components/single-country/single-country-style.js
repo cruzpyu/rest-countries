@@ -2,11 +2,13 @@ import styled from "styled-components";
 
 export const InfoContainer = styled.section`
   display: flex;
-  padding: 48px 108px;
   width: 100%;
   align-items: center;
+  justify-content: space-around;
+  padding: 0 96px;
   gap: 64px;
 
+  min-height: 66vh;
   @media (max-width: 767px) {
     flex-direction: column;
     padding: 0;
@@ -30,8 +32,6 @@ export const CountryName = styled.h2`
 export const TwoSides = styled.div`
   display: flex;
   width: 100%;
-  flex-direction: space-between;
-  padding-bottom: 64px;
 
   @media (max-width: 767px) {
     flex-direction: column;

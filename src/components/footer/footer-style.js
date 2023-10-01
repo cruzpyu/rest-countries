@@ -7,7 +7,7 @@ export const StyledFooter = styled.footer`
   justify-content: center;
 
   width: 100%;
-  height: 8vh;
+  height: 6vh;
 
   background-color: ${(props) => props.theme.ELEMENTS_COLOR};
 

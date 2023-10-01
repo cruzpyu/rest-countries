@@ -9,12 +9,13 @@ export const HomeContainer = styled.div`
 `;
 
 export const SingleCountryContainer = styled.main`
-  padding: 32px 0px 0 96px;
   background-color: ${(props) => props.theme.BACKGROUND_COLOR};
-  padding-bottom: 4vh;
+  width: 100%;
+  justify-content: space-between;
+  padding: 32px 96px;
+  gap: 24px;
 
   @media (max-width: 767px) {
     padding: 32px;
-    gap: 24px;
   }
 `;
