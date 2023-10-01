@@ -2,7 +2,7 @@ import useThemeStore from "../store/theme-store";
 
 import { colors } from "../style/colors";
 
-export const GetTheme = () => {
+export const useTheme = () => {
   const { theme } = useThemeStore();
   return colors[theme];
 };

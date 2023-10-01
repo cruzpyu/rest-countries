@@ -1,26 +1,53 @@
+import { useTheme } from "../hooks/use-theme";
+import {
+  CountryFlag,
+  CountryName,
+  InfoContainer,
+  OneSide,
+  TwoSides,
+} from "../style/country-page";
+import { BoldText, RegularText } from "../style/text";
+
+import { countryPageData } from "../utils/country-page-data";
+
+import CountryBorders from "./country-borders";
+
 const CountryInfo = ({ item, languages, currencies }) => {
+  const theme = useTheme();
+  const data = countryPageData(item, languages, currencies);
+
   return (
-    <>
-      <img alt={`${item.name.common} flag`} src={item.flags.svg} />
-      <p>{item.name.official}</p>
-      <p>Population: {item.population.toLocaleString("pt-BR")}</p>
-      <p>Region: {item.region}</p>
-      <p>Capital: {item.capital}</p>
-      <p>Subregion: {item.subregion}</p>
-
-      <p>Top level domain: {item.tld}</p>
-      <p>Languages: {languages}</p>
-      <p>Currencies: {currencies} </p>
-
-      <p>Borders Countries: </p>
-      {item.borders && (
-        <ul>
-          {item.borders.map((border) => (
-            <li>{border}</li>
-          ))}
-        </ul>
-      )}
-    </>
+    <InfoContainer theme={theme}>
+      <OneSide>
+        <CountryFlag alt={`${item.name.common} flag`} src={item.flags.svg} />
+      </OneSide>
+      <OneSide>
+        <CountryName theme={theme}>{item.name.official}</CountryName>
+        <TwoSides>
+          <OneSide>
+            {data?.RIGHT.map((item) => {
+              return (
+                <RegularText theme={theme}>
+                  <BoldText>{item.key}</BoldText>
+                  {item.value}
+                </RegularText>
+              );
+            })}
+          </OneSide>
+          <OneSide>
+            {data?.LEFT.map((item) => {
+              return (
+                <RegularText theme={theme}>
+                  <BoldText>{item.key}</BoldText>
+                  {item.value}
+                </RegularText>
+              );
+            })}
+          </OneSide>
+        </TwoSides>
+        {item.borders && <CountryBorders theme={theme} item={item} />}
+      </OneSide>
+    </InfoContainer>
   );
 };
 

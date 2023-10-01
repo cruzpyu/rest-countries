@@ -1,27 +1,11 @@
 import styled from "styled-components";
 import {
   DEFAULT_RADIUS,
-  DEFAULT_SHADOW,
   DEFAULT_SPACING
 } from "./constants";
 import {
   Link
 } from "react-router-dom";
-
-export const BoldText = styled.p `
-  font-weight: bold;
-  margin: 0;
-  color: ${(props) => props.theme.TEXT_COLOR};
-`;
-
-export const RegularText = styled.p `
-  display: flex;
-  align-items: center;
-  gap: ${DEFAULT_SPACING};
-  margin: 0;
-  margin-top: ${DEFAULT_SPACING};
-  color: ${(props) => props.theme.TEXT_COLOR};
-`;
 
 export const CardInfo = styled.div `
  padding: calc(${DEFAULT_SPACING} * 2);
@@ -32,7 +16,7 @@ export const CardContainer = styled.article `
   height: 300px;
   border-radius: ${DEFAULT_RADIUS};
   background-color: ${(props) => props.theme.ELEMENTS_COLOR};
-  box-shadow: ${DEFAULT_SHADOW};
+  box-shadow: 0px 4px 6px ${(props) => props.theme.SHADOW_COLOR};
 
   transition: transform 0.2s ease;
 

@@ -1,37 +1,36 @@
 import { useCallback } from "react";
 
-import useThemeStore from "../store/theme-store";
-
-import { BoldText } from "../style/country-card";
+import { StyledButton } from "../style/toggle-theme";
+import { RegularText } from "../style/text";
 
 import MoonIcon from "../icons/moon-icon";
 import SunIcon from "../icons/sun-icon";
 
-import { GetTheme } from "../utils/get-theme";
-import { StyledButton } from "../style/toggle-theme";
+import useThemeStore from "../store/theme-store";
 
+import { useTheme } from "../hooks/use-theme";
 
 const ToggleTheme = () => {
-  const { setTheme } = useThemeStore();
-  const theme = GetTheme();
+  const { theme, setTheme } = useThemeStore();
+  const colorsTheme = useTheme();
 
   const lightTheme = theme === "LIGHT";
 
   const handleToggleTheme = useCallback(() => {
     return lightTheme ? setTheme("DARK") : setTheme("LIGHT");
-  }, [setTheme, theme]);
+  }, [lightTheme, setTheme]);
 
   return (
     <StyledButton onClick={handleToggleTheme}>
       {lightTheme ? (
         <>
           <MoonIcon />
-          <BoldText theme={theme}>Dark mode</BoldText>
+          <RegularText theme={colorsTheme}>Dark mode</RegularText>
         </>
       ) : (
         <>
           <SunIcon />
-          <BoldText theme={theme}>Light Mode</BoldText>
+          <RegularText theme={colorsTheme}>Light Mode</RegularText>
         </>
       )}
     </StyledButton>

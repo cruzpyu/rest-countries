@@ -1,12 +1,14 @@
-import CountriesList from "../components/countries-list";
-import FilterContainer from "../components/filters/filter-container";
+import CountryList from "../components/country-list";
+import FilterContainer from "../components/filter-container";
+
+import { AppContainer } from "../style/containers";
 
 const Home = () => {
   return (
-    <div style={{ width: "100%", backgroundColor: "blue" }}>
+    <AppContainer>
       <FilterContainer />
-      <CountriesList />
-    </div>
+      <CountryList />
+    </AppContainer>
   );
 };
 

@@ -1,19 +1,23 @@
+import { useTheme } from "../hooks/use-theme";
+
 import {
-  BoldText,
   CardContainer,
   CardImage,
   CardInfo,
   CardTitle,
-  RegularText,
   StyledLink,
 } from "../style/country-card";
 
-import { GetTheme } from "../utils/get-theme";
+import { BoldText, RegularText } from "../style/text";
+
+import { countryCardData } from "../utils/country-card-data";
 
 const CountryCard = ({ country }) => {
+  const theme = useTheme();
+
   const { name, population, region, capital } = country;
 
-  const theme = GetTheme();
+  const data = countryCardData(population, region, capital);
 
   return (
     <StyledLink to={`${name?.common}`}>
@@ -21,18 +25,14 @@ const CountryCard = ({ country }) => {
         <CardImage alt={`${name?.common} flag`} src={country?.flags?.png} />
         <CardInfo>
           <CardTitle theme={theme}>{name?.common}</CardTitle>
-          <RegularText theme={theme}>
-            <BoldText theme={theme}>Population: </BoldText>
-            {population.toLocaleString("pt-BR")}
-          </RegularText>
-          <RegularText theme={theme}>
-            <BoldText theme={theme}>Region: </BoldText>
-            {region}
-          </RegularText>
-          <RegularText theme={theme}>
-            <BoldText theme={theme}>Capital: </BoldText>
-            {capital}
-          </RegularText>
+          {data.map((item) => {
+            return (
+              <RegularText key={item.key} theme={theme}>
+                <BoldText theme={theme}>{item.key} </BoldText>
+                {item.value}
+              </RegularText>
+            );
+          })}
         </CardInfo>
       </CardContainer>
     </StyledLink>

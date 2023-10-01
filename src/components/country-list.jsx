@@ -7,17 +7,17 @@ import useCountryStore from "../store/country-store";
 
 import { ListContainer } from "../style/country-list";
 
-import { GetTheme } from "../utils/get-theme";
+import { useTheme } from "../hooks/use-theme";
 
 import CountryCard from "./country-card";
 
-const CountriesList = () => {
+const CountryList = () => {
   const { region } = useRegionStore();
   const { country } = useCountryStore();
 
   const countriesData = useCountries();
 
-  const theme = GetTheme();
+  const theme = useTheme();
 
   const filteredByCountry = useMemo(() => {
     if (!country) {
@@ -47,4 +47,4 @@ const CountriesList = () => {
   );
 };
 
-export default CountriesList;
+export default CountryList;

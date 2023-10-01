@@ -1,16 +1,16 @@
-import { HeaderTitle, StyledHeader } from "../style/header";
-import { GetTheme } from "../utils/get-theme";
+import { HeaderContainer, HeaderTitle } from "../style/header";
+import { useTheme } from "../hooks/use-theme";
 
 import ToggleTheme from "./toggle-theme";
 
 const Header = () => {
-  const theme = GetTheme();
+  const theme = useTheme();
 
   return (
-    <StyledHeader theme={theme}>
+    <HeaderContainer theme={theme}>
       <HeaderTitle theme={theme}>Where in the world?</HeaderTitle>
       <ToggleTheme />
-    </StyledHeader>
+    </HeaderContainer>
   );
 };
 
