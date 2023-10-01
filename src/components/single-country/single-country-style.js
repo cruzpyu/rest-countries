@@ -8,7 +8,7 @@ export const InfoContainer = styled.section`
   padding: 0 96px;
   gap: 64px;
 
-  min-height: 68vh;
+  min-height: 70vh;
   @media (max-width: 767px) {
     flex-direction: column;
     padding: 0;
