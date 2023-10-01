@@ -1,12 +1,11 @@
-import {
-  create
-} from 'zustand';
+import { create } from "zustand";
 
 const useRegionStore = create((set) => ({
   region: null,
-  setRegion: (region) => set({
-    region
-  }),
+  setRegion: (region) =>
+    set({
+      region,
+    }),
 }));
 
 export default useRegionStore;

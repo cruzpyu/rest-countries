@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import useRegionStore from "../store/region-store";
 import { useTheme } from "../hooks/use-theme";
 import { SelectContainer, StyledOption, StyledSelect } from "../style/filters";
+import { FilterOptions } from "../utils/filter-options";
 
 const FilterRegion = () => {
   const { register, watch } = useForm();
@@ -13,24 +14,13 @@ const FilterRegion = () => {
   return (
     <SelectContainer theme={theme} onChange={() => setRegion(watch("region"))}>
       <StyledSelect theme={theme} {...register("region")}>
-        <StyledOption theme={theme} defaultValue value="">
-          Filter by Region
-        </StyledOption>
-        <StyledOption theme={theme} value="Africa">
-          Africa
-        </StyledOption>
-        <StyledOption theme={theme} value="Americas">
-          America
-        </StyledOption>
-        <StyledOption theme={theme} value="Asia">
-          Asia
-        </StyledOption>
-        <StyledOption theme={theme} value="Europe">
-          Europe
-        </StyledOption>
-        <StyledOption theme={theme} value="Oceania">
-          Oceania
-        </StyledOption>
+        {FilterOptions.map((item) => {
+          return (
+            <StyledOption key={item.key} theme={theme} value={item.value}>
+              {item.key}
+            </StyledOption>
+          );
+        })}
       </StyledSelect>
     </SelectContainer>
   );

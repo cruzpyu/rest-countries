@@ -1,17 +1,13 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
-import {
-  DEFAULT_RADIUS,
-  DEFAULT_SPACING
-} from "./constants";
-import {
-  Link
-} from "react-router-dom";
 
-export const CardInfo = styled.div `
- padding: calc(${DEFAULT_SPACING} * 2);
+import { DEFAULT_RADIUS, DEFAULT_SPACING } from "./constants";
+
+export const CardInfo = styled.div`
+  padding: calc(${DEFAULT_SPACING} * 2);
 `;
 
-export const CardContainer = styled.article `
+export const CardContainer = styled.article`
   width: 100%;
   height: 300px;
   border-radius: ${DEFAULT_RADIUS};
@@ -21,21 +17,21 @@ export const CardContainer = styled.article `
   transition: transform 0.2s ease;
 
   &:hover {
-    transform: scale(1.02); 
+    transform: scale(1.02);
   }
   @media (max-width: 767px) {
-    height: auto; 
+    height: auto;
   }
 `;
 
-export const CardImage = styled.img `
+export const CardImage = styled.img`
   width: 100%;
   height: 50%;
   border-top-right-radius: ${DEFAULT_RADIUS};
   border-top-left-radius: ${DEFAULT_RADIUS};
 `;
 
-export const CardTitle = styled.h2 `
+export const CardTitle = styled.h2`
   font-size: 16px;
   font-weight: bold;
   margin-bottom: ${DEFAULT_SPACING};
@@ -46,8 +42,7 @@ export const CardTitle = styled.h2 `
   }
 `;
 
-export const StyledLink = styled(Link)
-`
+export const StyledLink = styled(Link)`
   text-decoration: none;
   color: inherit;
   cursor: pointer;
